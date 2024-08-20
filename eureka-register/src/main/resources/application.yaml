@@ -1,0 +1,29 @@
+#spring:
+#  application:
+#    name: eureka-register
+#server:
+#  port: 8761
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#  server:
+#    wait-time-in-ms-when-sync-empty: 0
+spring:
+  config:
+      import: optional:configserver:http://localhost:8888
+  application:
+    name: eureka-register
+  cloud:
+    config:
+      uri:  http://localhost:8888
+      name: eureka-register
+#spring:
+#  config:
+#    import: optional:configserver:http://localhost:8888
+#  application:
+#    name: RegistryService
+#  cloud:
+#    config:
+#      uri: http://localhost:8888
+#      name: RegistryService
